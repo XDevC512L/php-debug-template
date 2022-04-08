@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  php:
+    build: "."
+    container_name: configurador-leroy_apache
+    volumes:
+      - "./src/:/var/www/html:Z,rw"
+    ports:
+      - 80:80
+    env_file:
+      - .env
+  mariadb:
+    container_name: configurador-leroy_mariadb
+    image: mariadb:10.5
+    volumes:
+      - "./db/:/var/lib/mysql:Z,rw"
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+

@@ -1,0 +1,7 @@
+db/*
+!db/.gitkeep
+src/*
+!src/.gitkeep
+!src/.htaccess
+.env.prod
+data.sql
